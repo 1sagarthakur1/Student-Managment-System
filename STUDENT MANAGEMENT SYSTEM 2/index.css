@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+#navbar{
+    height: 70px ;
+    width: 100%;
+    box-shadow: 0px 1px 15px 1px rgb(250, 184, 103);
+    background-color: rgb(250, 184, 103);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+body{
+    background-color: bisque;
+}
+#TotalStudents{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#batch01_students{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#batch02_students{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+#FtB1B2{
+    display: flex;
+    height: 60px;
+    width:500px;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    background-color: bisque;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; 
+ }
+#home{
+    color: rgb(103, 67, 23);
+    text-shadow: 0px 6px 12px -2px chocolate;
+    font-family: 'Roboto', sans-serif;
+}
+#students{
+    color: rgb(103, 67, 23);
+    font-family: 'Roboto', sans-serif;
+}
+#forHadding{
+     display:flex;
+     justify-content: center;
+}
+#forcreacter{
+   font-size: 50px;
+   text-transform: uppercase;
+   color: white;
+   text-shadow: -10px 5px 10px #afaeae;
+   /* font-family: 'Anton', sans-serif; */
+   font-family: 'Anton', Arial, sans-serif;
+   letter-spacing: -0.0em;
+   transition: all 0.25s ease-out;
+}
+#form{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: space-around;
+    margin: auto;
+    background-color:rgb(250, 184, 103);
+    /* align-items: center; */
+}
+.input{
+    height: 40px;
+    padding-left: 20px;
+}
+#Bsubmit{
+    height: 40px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+    background-color: rgb(103, 67, 23);
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing:2px;
+    border-radius: 5px;
+}
+#studentsinfo{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-around;
+    gap: 2px;
+   }
+   .tr>th{
+    background-color: white;
+    width: 100px;
+    height:40px;
+   }
+   #table1{
+    background-color: rgb(103, 67, 23);
+    width: 620px;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+   }
+   #table2{
+    background-color: rgb(103, 67, 23);
+    width: 620px;
+    padding-bottom: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+   }
+   td{
+    width: 100px;
+    background-color: rgb(250, 184, 103);
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    height: 120px;
+    text-align: center;
+    color:black;
+   }
+   tr{
+    text-align: center;
+    vertical-align: middle;
+   }
+   .Fimg{
+      height: 120px;
+      width: 120px;
+      padding-top: 5px;
+      padding-left:5px;
+      padding-right: 5px;
+   }
+   .had{
+    background-color:rgb(103, 67, 23);
+    height: 30px;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+   }
+   #Fdelet{
+    height: 40px;
+    width: 80px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px;
+    background-color: rgb(103, 67, 23);
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing:2px;
+    border-radius: 5px;
+   }

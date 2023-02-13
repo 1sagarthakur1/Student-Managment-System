@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="index.html"><h1 id="home">Home</h1></a>
+        <a href="Studentslist.html"><h1 id="students">Students</h1></a>
+        <div id="FtB1B2">
+            <div id="TotalStudents">Total</div>
+            <span style="height:40px; width: 0px; border: 0.3px solid gray;"></span>
+            <div id="batch01_students">Batch 1</div>
+            <span style="height:40px; width: 0px; border: 0.3px solid gray;"></span>
+            <div id="batch02_students">Batch 2</div>
+        </div>
+    </nav>
+    <div id="forHadding">
+        <div id="forcreacter">
+            <span>S</span><span>T</span><span>U</span><span>D</span><span>e</span><span>n</span><span>t</span> &nbsp;&nbsp;<span>m</span><span>a</span><span>n</span><span>a</span><span>g</span><span>e</span><span>m</span><span>e</span><span>n</span><span>t</span> &nbsp;&nbsp; <span>s</span><span>y</span><span>s</span><span>t</span><span>e</span><span>m</span>
+        </div>
+    </div>
+    <form action="" id="form">
+        <input type="url" placeholder="Image" class="input" id="image">
+        <input type="text" placeholder="Name" class="input" id="name">
+        <input type="text" placeholder="course" class="input" id="course">
+        <input type="text" placeholder="unit" class="input" id="unit">
+        <select name="" id="batchs" class="input">
+            <option value="batch01">Batch01</option>
+            <option value="batch02">Batch02</option>
+        </select>
+        <button onclick="foraddstudent()" id="Bsubmit">SUBMIT</button>
+    </form>
+</body>
+</html>
+<script>
+    var arr1 = JSON.parse(localStorage.getItem("batch01"))||[];
+    var arr2 = JSON.parse(localStorage.getItem("batch02"))||[];
+    function foraddstudent(){
+        event.preventDefault()
+        var Fimage = document.querySelector("#image").value;
+        var Fname = document.querySelector("#name").value;
+        var Fcourse = document.querySelector("#course").value;
+        var Funit = document.querySelector("#unit").value;
+        var Fbatch = document.querySelector("#batchs").value;
+        var sutdentinfo = new forcreatobj(Fimage,Fname,Fcourse,Funit,Fbatch);
+
+        if(Fbatch=="batch01"){
+            arr1.push(sutdentinfo)
+            console.log(arr1)
+            localStorage.setItem("batch01",JSON.stringify(arr1))
+        }
+        else if(Fbatch=="batch02"){
+            arr2.push(sutdentinfo)
+            console.log(arr2)
+            localStorage.setItem("batch02",JSON.stringify(arr2))
+        }
+        window.location.reload()
+    }
+
+    var Farr1_len = document.createElement("h1");
+        Farr1_len.innerText = arr1.length;
+        document.querySelector("#batch01_students").append(Farr1_len);
+
+    var Farr2_len = document.createElement("h1");
+        Farr2_len.innerText = arr2.length;
+        document.querySelector("#batch02_students").append(Farr2_len);
+    
+    var Ftotal_len = document.createElement("h1");
+        Ftotal_len.innerText = arr1.length+arr2.length;
+        document.querySelector("#TotalStudents").append(Ftotal_len);
+
+
+function forcreatobj(A,B,C,D,E){
+    this.image = A;
+    this.name = B;
+    this.course = C;
+    this.unit = D;
+    this.batch = E;
+}
+</script>

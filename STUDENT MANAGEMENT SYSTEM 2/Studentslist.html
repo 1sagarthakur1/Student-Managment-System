@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="navbar">
+        <a href="index.html"><h1 id="home">Home</h1></a>
+        <div id="FtB1B2">
+            <div id="TotalStudents">Total</div>
+            <span style="height:40px; width: 0px; border: 0.3px solid gray;"></span>
+            <div id="batch01_students">Batch 1</div>
+            <span style="height:40px; width: 0px; border: 0.3px solid gray;"></span>
+            <div id="batch02_students">Batch 2</div>
+        </div>
+    </nav>
+    <div id="studentsinfo">
+        <div>
+            <table id="table1">
+                <div class="had">BATCH 1</div>
+                <tr class="tr">
+                    <th class="th">Photo</th>
+                    <th class="th">Name</th>
+                    <th class="th">Course</th>
+                    <th class="th">unit</th>
+                    <th class="th">batch</th>
+                    <th class="th">Remove</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <table id="table2">
+                <div class="had">BATCH 2</div>
+                <tr class="tr">
+                    <th>Photo</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>unit</th>
+                    <th>batch</th>
+                    <th class="th">Remove</th>
+                </tr>
+            </table>
+        </div>
+</div>
+</body>
+</html>
+<script>
+   var Data1 = JSON.parse(localStorage.getItem("batch01"));
+   var Data2 = JSON.parse(localStorage.getItem("batch02"));
+//    console.log(Data1.length)
+       display1(Data1);
+       function display1(Data1){
+        Data1.forEach(function(ele,index){
+            const Ftr1 = document.createElement("tr")
+                Ftr1.setAttribute("id","trn")
+            const Fimg = document.createElement("td")
+              const Fimage = document.createElement("img");
+                  Fimage.setAttribute("src",ele.image)
+                  Fimage.setAttribute("class","Fimg")
+              const Fname = document.createElement("td");
+                  Fname.innerText = ele.name;
+                //   Fname.setAttribute("class","td")
+              const Fcourse = document.createElement("td");
+                  Fcourse.innerText = ele.course;
+                //   Fname.setAttribute("class","td")
+              const Funit = document.createElement("td");
+                  Funit.innerText = ele.unit;
+                //   Fname.setAttribute("class","td")
+              const Fbatch = document.createElement("td");
+                  Fbatch.innerText = ele.batch
+                //   Fname.setAttribute("class","td")
+
+            const Fbutt = document.createElement("td")
+              const Fdelet = document.createElement("button");
+                  Fdelet.innerText = "Remove";
+                  Fdelet.setAttribute("id","Fdelet")
+                  Fdelet.addEventListener("click",function(){
+                    forRemove(ele,index)
+                  })
+            Fimg.append(Fimage)
+            Fbutt.append(Fdelet)
+            Ftr1.append(Fimg,Fname,Fcourse,Funit,Fbatch,Fbutt)
+            document.querySelector("#table1").append(Ftr1)
+        })
+       }
+       function forRemove(ele,index){
+        // console.log("sagar")
+            Data1.splice(index,1)
+            localStorage.setItem("batch01",JSON.stringify(Data1))
+            window.location.reload()
+       }
+
+       display2(Data2);
+       function display2(Data2){
+        Data2.forEach(function(ele,index){
+            const Ftr1 = document.createElement("tr")
+            const Fimg = document.createElement("td")
+              const Fimage = document.createElement("img");
+                  Fimage.setAttribute("src",ele.image)
+                  Fimage.setAttribute("class","Fimg")
+              const Fname = document.createElement("td");
+                  Fname.innerText = ele.name;
+              const Fcourse = document.createElement("td");
+                  Fcourse.innerText = ele.course;
+              const Funit = document.createElement("td");
+                  Funit.innerText = ele.unit;
+              const Fbatch = document.createElement("td");
+                  Fbatch.innerText = ele.batch
+            const Fbutt = document.createElement("td")
+              const Fdelet = document.createElement("button");
+                  Fdelet.innerText = "Remove";
+                  Fdelet.setAttribute("id","Fdelet")
+                  Fdelet.addEventListener("click",function(){
+                    forRemove2(ele,index)
+                  })
+            Fimg.append(Fimage)
+            Fbutt.append(Fdelet)
+            Ftr1.append(Fimg,Fname,Fcourse,Funit,Fbatch,Fbutt)
+            document.querySelector("#table2").append(Ftr1)
+        })
+       }
+
+       function forRemove2(ele,index){
+        // console.log("sagar")
+            Data2.splice(index,1)
+            localStorage.setItem("batch02",JSON.stringify(Data2))
+            window.location.reload()
+       }
+
+    var Farr1_len = document.createElement("h1");
+        Farr1_len.innerText = Data1.length;
+        document.querySelector("#batch01_students").append(Farr1_len);
+
+    var Farr2_len = document.createElement("h1");
+        Farr2_len.innerText = Data2.length;
+        document.querySelector("#batch02_students").append(Farr2_len);
+    
+    var Ftotal_len = document.createElement("h1");
+        Ftotal_len.innerText = Data1.length+Data2.length;
+        document.querySelector("#TotalStudents").append(Ftotal_len);
+    
+</script>
